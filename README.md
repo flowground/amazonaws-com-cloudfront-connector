@@ -1,11 +1,11 @@
-# ![LOGO](logo.png) Amazon CloudFront MSP Connector
+# ![LOGO](logo.png) Amazon CloudFront **flow**ground Connector
 
 ## Description
 
-A generated MSP connector for the Amazon CloudFront API (version 2018-11-05).
+A generated **flow**ground connector for the Amazon CloudFront API (version 2018-11-05).
 
 Generated from: https://api.apis.guru/v2/specs/amazonaws.com/cloudfront/2018-11-05/swagger.json<br/>
-Generated at: 2019-05-07T11:15:29+03:00
+Generated at: 2019-05-07T17:35:06+03:00
 
 ## API Description
 
@@ -606,7 +606,7 @@ Supported authorization schemes:
 
 ## License
 
-flowground :- Telekom iPaaS / amazonaws-com-cloudfront-connector<br/>
+**flow**ground :- Telekom iPaaS / amazonaws-com-cloudfront-connector<br/>
 Copyright © 2019, [Deutsche Telekom AG](https://www.telekom.de)<br/>
 contact: flowground@telekom.de
 
