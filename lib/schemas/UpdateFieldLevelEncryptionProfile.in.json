@@ -1,0 +1,131 @@
+{
+    "type": "object",
+    "properties": {
+        "Id": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "FieldLevelEncryptionProfileConfig": {
+                    "description": "Request to update a field-level encryption profile. ",
+                    "properties": {
+                        "CallerReference": {
+                            "description": "A unique number that ensures that the request can't be replayed.",
+                            "type": "string"
+                        },
+                        "Comment": {
+                            "description": "An optional comment for the field-level encryption profile.",
+                            "type": "string"
+                        },
+                        "EncryptionEntities": {
+                            "description": "A complex data type of encryption entities for the field-level encryption profile that include the public key ID, provider, and field patterns for specifying which fields to encrypt with this key.",
+                            "properties": {
+                                "Items": {
+                                    "description": "An array of field patterns in a field-level encryption content type-profile mapping. ",
+                                    "items": {
+                                        "description": "Complex data type for field-level encryption profiles that includes the encryption key and field pattern specifications. ",
+                                        "properties": {
+                                            "FieldPatterns": {
+                                                "description": "Field patterns in a field-level encryption content type profile specify the fields that you want to be encrypted. You can provide the full field name, or any beginning characters followed by a wildcard (*). You can't overlap field patterns. For example, you can't have both ABC* and AB*. Note that field patterns are case-sensitive. ",
+                                                "properties": {
+                                                    "Items": {
+                                                        "description": "An array of the field-level encryption field patterns.",
+                                                        "items": {
+                                                            "type": "string"
+                                                        },
+                                                        "type": "array"
+                                                    },
+                                                    "Quantity": {
+                                                        "description": "The number of field-level encryption field patterns.",
+                                                        "type": "integer"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "Quantity"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "ProviderId": {
+                                                "description": "The provider associated with the public key being used for encryption. This value must also be provided with the private key for applications to be able to decrypt data.",
+                                                "type": "string"
+                                            },
+                                            "PublicKeyId": {
+                                                "description": "The public key associated with a set of field-level encryption patterns, to be used when encrypting the fields that match the patterns. ",
+                                                "type": "string"
+                                            }
+                                        },
+                                        "required": [
+                                            "PublicKeyId",
+                                            "ProviderId",
+                                            "FieldPatterns"
+                                        ],
+                                        "type": "object"
+                                    },
+                                    "type": "array"
+                                },
+                                "Quantity": {
+                                    "description": "Number of field pattern items in a field-level encryption content type-profile mapping. ",
+                                    "type": "integer"
+                                }
+                            },
+                            "required": [
+                                "Quantity"
+                            ],
+                            "type": "object"
+                        },
+                        "Name": {
+                            "description": "Profile name for the field-level encryption profile.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "Name",
+                        "CallerReference",
+                        "EncryptionEntities"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "FieldLevelEncryptionProfileConfig"
+            ],
+            "type": "object",
+            "xml": {
+                "namespace": "http://cloudfront.amazonaws.com/doc/2018-11-05/"
+            }
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

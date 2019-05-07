@@ -1,0 +1,79 @@
+{
+    "type": "object",
+    "properties": {
+        "Action": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "PublicKeyConfig": {
+                    "description": "The request to add a public key to CloudFront.",
+                    "properties": {
+                        "CallerReference": {
+                            "description": "A unique number that ensures that the request can't be replayed.",
+                            "type": "string"
+                        },
+                        "Comment": {
+                            "description": "An optional comment about a public key.",
+                            "type": "string"
+                        },
+                        "EncodedKey": {
+                            "description": "The encoded public key that you want to add to CloudFront to use with features like field-level encryption.",
+                            "type": "string"
+                        },
+                        "Name": {
+                            "description": "The name for a public key you add to CloudFront to use with features like field-level encryption.",
+                            "type": "string"
+                        }
+                    },
+                    "required": [
+                        "CallerReference",
+                        "Name",
+                        "EncodedKey"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "PublicKeyConfig"
+            ],
+            "type": "object",
+            "xml": {
+                "namespace": "http://cloudfront.amazonaws.com/doc/2018-11-05/"
+            }
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

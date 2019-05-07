@@ -1,0 +1,89 @@
+{
+    "type": "object",
+    "properties": {
+        "Operation": {
+            "required": true,
+            "type": "string",
+            "enum": [
+                "Tag"
+            ]
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "description": " The request to add tags to a CloudFront resource.",
+            "properties": {
+                "Tags": {
+                    "description": " A complex type that contains zero or more <code>Tag</code> elements.",
+                    "properties": {
+                        "Items": {
+                            "description": " A complex type that contains <code>Tag</code> elements.",
+                            "items": {
+                                "description": " A complex type that contains <code>Tag</code> key and <code>Tag</code> value.",
+                                "properties": {
+                                    "Key": {
+                                        "description": "<p> A string that contains <code>Tag</code> key.</p> <p>The string length should be between 1 and 128 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>",
+                                        "maxLength": 128,
+                                        "minLength": 1,
+                                        "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                        "type": "string"
+                                    },
+                                    "Value": {
+                                        "description": "<p> A string that contains an optional <code>Tag</code> value.</p> <p>The string length should be between 0 and 256 characters. Valid characters include <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ - . : / = + @</code>.</p>",
+                                        "maxLength": 256,
+                                        "minLength": 0,
+                                        "pattern": "^([\\p{L}\\p{Z}\\p{N}_.:/=+\\-@]*)$",
+                                        "type": "string"
+                                    }
+                                },
+                                "required": [
+                                    "Key"
+                                ],
+                                "type": "object"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "required": [
+                "Tags"
+            ],
+            "type": "object",
+            "xml": {
+                "namespace": "http://cloudfront.amazonaws.com/doc/2018-11-05/"
+            }
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}

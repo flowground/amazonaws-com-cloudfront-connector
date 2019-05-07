@@ -1,0 +1,172 @@
+{
+    "type": "object",
+    "properties": {
+        "Id": {
+            "required": true,
+            "type": "string"
+        },
+        "Version": {
+            "required": true,
+            "type": "string"
+        },
+        "requestBody": {
+            "properties": {
+                "FieldLevelEncryptionConfig": {
+                    "description": "Request to update a field-level encryption configuration. ",
+                    "properties": {
+                        "CallerReference": {
+                            "description": "A unique number that ensures the request can't be replayed.",
+                            "type": "string"
+                        },
+                        "Comment": {
+                            "description": "An optional comment about the configuration.",
+                            "type": "string"
+                        },
+                        "ContentTypeProfileConfig": {
+                            "description": "A complex data type that specifies when to forward content if a content type isn't recognized and profiles to use as by default in a request if a query argument doesn't specify a profile to use.",
+                            "properties": {
+                                "ContentTypeProfiles": {
+                                    "description": "The configuration for a field-level encryption content type-profile. ",
+                                    "properties": {
+                                        "Items": {
+                                            "description": "Items in a field-level encryption content type-profile mapping. ",
+                                            "items": {
+                                                "description": "A field-level encryption content type profile. ",
+                                                "properties": {
+                                                    "ContentType": {
+                                                        "description": "The content type for a field-level encryption content type-profile mapping. ",
+                                                        "type": "string"
+                                                    },
+                                                    "Format": {
+                                                        "description": "The format for a field-level encryption content type-profile mapping. ",
+                                                        "enum": [
+                                                            "URLEncoded"
+                                                        ],
+                                                        "type": "string"
+                                                    },
+                                                    "ProfileId": {
+                                                        "description": "The profile ID for a field-level encryption content type-profile mapping. ",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "Format",
+                                                    "ContentType"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "Quantity": {
+                                            "description": "The number of field-level encryption content type-profile mappings. ",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "Quantity"
+                                    ],
+                                    "type": "object"
+                                },
+                                "ForwardWhenContentTypeIsUnknown": {
+                                    "description": "The setting in a field-level encryption content type-profile mapping that specifies what to do when an unknown content type is provided for the profile. If true, content is forwarded without being encrypted when the content type is unknown. If false (the default), an error is returned when the content type is unknown. ",
+                                    "type": "boolean"
+                                }
+                            },
+                            "required": [
+                                "ForwardWhenContentTypeIsUnknown"
+                            ],
+                            "type": "object"
+                        },
+                        "QueryArgProfileConfig": {
+                            "description": "A complex data type that specifies when to forward content if a profile isn't found and the profile that can be provided as a query argument in a request.",
+                            "properties": {
+                                "ForwardWhenQueryArgProfileIsUnknown": {
+                                    "description": "Flag to set if you want a request to be forwarded to the origin even if the profile specified by the field-level encryption query argument, fle-profile, is unknown.",
+                                    "type": "boolean"
+                                },
+                                "QueryArgProfiles": {
+                                    "description": "Profiles specified for query argument-profile mapping for field-level encryption.",
+                                    "properties": {
+                                        "Items": {
+                                            "description": "Number of items for query argument-profile mapping for field-level encryption.",
+                                            "items": {
+                                                "description": "Query argument-profile mapping for field-level encryption.",
+                                                "properties": {
+                                                    "ProfileId": {
+                                                        "description": "ID of profile to use for field-level encryption query argument-profile mapping",
+                                                        "type": "string"
+                                                    },
+                                                    "QueryArg": {
+                                                        "description": "Query argument for field-level encryption query argument-profile mapping.",
+                                                        "type": "string"
+                                                    }
+                                                },
+                                                "required": [
+                                                    "QueryArg",
+                                                    "ProfileId"
+                                                ],
+                                                "type": "object"
+                                            },
+                                            "type": "array"
+                                        },
+                                        "Quantity": {
+                                            "description": "Number of profiles for query argument-profile mapping for field-level encryption.",
+                                            "type": "integer"
+                                        }
+                                    },
+                                    "required": [
+                                        "Quantity"
+                                    ],
+                                    "type": "object"
+                                }
+                            },
+                            "required": [
+                                "ForwardWhenQueryArgProfileIsUnknown"
+                            ],
+                            "type": "object"
+                        }
+                    },
+                    "required": [
+                        "CallerReference"
+                    ],
+                    "type": "object"
+                }
+            },
+            "required": [
+                "FieldLevelEncryptionConfig"
+            ],
+            "type": "object",
+            "xml": {
+                "namespace": "http://cloudfront.amazonaws.com/doc/2018-11-05/"
+            }
+        },
+        "X_Amz_Content_Sha256": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Date": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Algorithm": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Credential": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Security_Token": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_Signature": {
+            "required": false,
+            "type": "string"
+        },
+        "X_Amz_SignedHeaders": {
+            "required": false,
+            "type": "string"
+        }
+    }
+}
