@@ -1,7 +1,7 @@
 {
     "name": "amazonaws-com-cloudfront-connector",
     "version": "2018.0.0",
-    "description": "<fullname>Amazon CloudFront</fullname> <p>This is the <i>Amazon CloudFront API Reference</i>. This guide is for developers who need detailed information about CloudFront API actions, data types, and errors. For detailed information about CloudFront features, see the <i>Amazon CloudFront Developer Guide</i>.</p>",
+    "description": "Amazon CloudFront This is the Amazon CloudFront API Reference. This guide is for developers who\nneed detailed information about CloudFront API actions, data types, and errors.\nFor detailed information about CloudFront features, see the Amazon CloudFront\nDeveloper Guide.",
     "main": "component.json",
     "dependencies": {
         "elasticio-node": "0.0.9",
